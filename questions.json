@@ -1,0 +1,1019 @@
+[
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "计算机基础知识",
+    "question": "冯·诺依曼提出的现代计算机工作原理的核心思想是（　）。",
+    "options": ["存储程序和程序控制", "采用晶体管作为逻辑元件", "只能处理数值计算", "不需要安装操作系统"],
+    "answer": "A",
+    "analysis": "冯·诺依曼提出“存储程序”原理：程序和数据都用二进制表示并存储在存储器中，计算机按照存储的程序自动逐条执行指令，这就是“存储程序和程序控制”。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "数据表示与编码",
+    "question": "十进制数 100 转换为二进制数是（　）。",
+    "options": ["1100100", "1101000", "1011010", "1100110"],
+    "answer": "A",
+    "analysis": "100 = 64 + 32 + 4 = 2⁶ + 2⁵ + 2²，对应二进制为 1100100。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "数据表示与编码",
+    "question": "二进制数 1011010 对应的十进制数是（　）。",
+    "options": ["86", "90", "94", "98"],
+    "answer": "B",
+    "analysis": "1011010 = 2⁶ + 2⁴ + 2³ + 2¹ = 64 + 16 + 8 + 2 = 90。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "下列存储器中，断电后信息会全部丢失的是（　）。",
+    "options": ["ROM", "RAM", "硬盘", "U盘"],
+    "answer": "B",
+    "analysis": "RAM（随机存取存储器）属于易失性存储器，断电后信息全部丢失；ROM 断电后信息不丢失，硬盘、U盘属于外存储器，断电后信息也不会丢失。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "CPU 中负责取指令、分析指令并发出控制信号的部件是（　）。",
+    "options": ["运算器", "控制器", "存储器", "接口电路"],
+    "answer": "B",
+    "analysis": "CPU 由运算器和控制器组成。运算器负责算术和逻辑运算；控制器负责取指令、分析指令并发出控制信号，是整个计算机的指挥中心。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "操作系统Windows",
+    "question": "下列软件中，属于系统软件的是（　）。",
+    "options": ["Windows 10", "Photoshop", "微信", "爱奇艺"],
+    "answer": "A",
+    "analysis": "操作系统是最基本的系统软件。Photoshop、微信、爱奇艺都是面向用户特定应用的软件，属于应用软件。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "操作系统Windows",
+    "question": "在 Windows 中，打开任务管理器的快捷键是（　）。",
+    "options": ["Ctrl+Shift+Esc", "Ctrl+P", "Alt+F4", "Win+R"],
+    "answer": "A",
+    "analysis": "Ctrl+Shift+Esc 可直接打开任务管理器；Ctrl+P 打印，Alt+F4 关闭当前窗口，Win+R 打开“运行”对话框。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "操作系统Windows",
+    "question": "Windows 中的“回收站”是（　）。",
+    "options": ["内存中的一块区域", "硬盘上用来存放被删除文件的区域", "只读存储器中的一块区域", "虚拟内存区域"],
+    "answer": "B",
+    "analysis": "回收站是每个硬盘分区上的一块特殊区域，用来临时存放被删除的文件，清空回收站后文件才被彻底删除。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "Word文字处理",
+    "question": "在 Word 中，将某段文字设置为“首字下沉”，应使用的选项卡是（　）。",
+    "options": ["插入", "开始", "审阅", "视图"],
+    "answer": "A",
+    "analysis": "“首字下沉”属于插入文本元素功能，位于“插入”选项卡的“文本”组中。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 公式中，引用 $A$1 属于（　）。",
+    "options": ["相对引用", "绝对引用", "混合引用", "三维引用"],
+    "answer": "B",
+    "analysis": "行号和列标前都加 $ 表示绝对引用，复制公式时引用地址不发生变化；只有行或列一侧加 $ 的为混合引用。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 中，用于计算区域中数值平均值的函数是（　）。",
+    "options": ["SUM", "COUNT", "AVERAGE", "MAX"],
+    "answer": "C",
+    "analysis": "AVERAGE 求平均值，SUM 求和，COUNT 统计数字个数，MAX 求最大值。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "PowerPoint演示文稿",
+    "question": "PowerPoint 中的“幻灯片切换”效果是指（　）。",
+    "options": ["单张幻灯片内部对象的动画", "相邻两张幻灯片之间的过渡效果", "整个演示文稿的背景样式", "母版的版式设置"],
+    "answer": "B",
+    "analysis": "“切换”作用于幻灯片与幻灯片之间的过渡；“动画”才作用于单张幻灯片内部的对象。这是考试常见混淆点。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "按覆盖范围分类，覆盖范围最小的计算机网络是（　）。",
+    "options": ["局域网", "城域网", "广域网", "互联网"],
+    "answer": "A",
+    "analysis": "按覆盖范围从小到大依次为：局域网（LAN，几米~几千米）、城域网（MAN，一个城市）、广域网（WAN，跨地区跨国）。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "将域名转换为 IP 地址的服务是（　）。",
+    "options": ["DNS", "DHCP", "FTP", "SMTP"],
+    "answer": "A",
+    "analysis": "DNS（域名系统）负责把域名解析为 IP 地址；DHCP 自动分配 IP 地址，FTP 是文件传输协议，SMTP 是发送电子邮件的协议。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "数据结构与算法",
+    "question": "只能在表的一端进行插入和删除操作，且具有“后进先出”特点的结构是（　）。",
+    "options": ["队列", "栈", "线性表", "集合"],
+    "answer": "B",
+    "analysis": "栈是限定仅在表尾（栈顶）进行插入和删除的线性表，特点是后进先出（LIFO）；队列是先进先出（FIFO）。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "数据库技术",
+    "question": "数据库系统中，负责对数据进行统一管理和控制的软件是（　）。",
+    "options": ["DB", "DBMS", "DBA", "OS"],
+    "answer": "B",
+    "analysis": "DBMS（数据库管理系统）是位于用户与操作系统之间的数据管理软件；DB 是数据库，DBA 是数据库管理员，OS 是操作系统。"
+  },
+  {
+    "year": 2022,
+    "type": "单选题",
+    "knowledge_point": "程序设计基础",
+    "question": "结构化程序设计的三种基本控制结构是（　）。",
+    "options": ["顺序、选择、循环", "顺序、选择、递归", "顺序、分支、跳转", "循环、子程序、模块"],
+    "answer": "A",
+    "analysis": "结构化程序设计只由顺序结构、选择（分支）结构、循环（重复）结构三种基本结构组成，任何程序都可以由这三种结构描述。"
+  },
+  {
+    "year": 2022,
+    "type": "多选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "下列属于计算机网络传输介质的有（　）。",
+    "options": ["双绞线", "光纤", "同轴电缆", "路由器"],
+    "answer": "ABC",
+    "analysis": "双绞线、光纤、同轴电缆都是有线传输介质（还有微波、卫星等无线介质）；路由器是网络互联设备，不是传输介质。"
+  },
+  {
+    "year": 2022,
+    "type": "多选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "下列属于输入设备的有（　）。",
+    "options": ["扫描仪", "鼠标", "键盘", "打印机"],
+    "answer": "ABC",
+    "analysis": "扫描仪、鼠标、键盘把外部信息输入计算机，属于输入设备；打印机把计算机处理结果输出，属于输出设备。"
+  },
+  {
+    "year": 2022,
+    "type": "多选题",
+    "knowledge_point": "数据表示与编码",
+    "question": "下列关于进制的说法，正确的有（　）。",
+    "options": ["二进制只有 0 和 1 两个数码", "八进制由 0～7 组成", "十六进制由 0～9 和 A～F 组成", "计算机内部采用十进制进行运算"],
+    "answer": "ABC",
+    "analysis": "计算机内部一律采用二进制进行存储和运算，故 D 错误；A、B、C 均为各进制的基本特征。"
+  },
+  {
+    "year": 2022,
+    "type": "多选题",
+    "knowledge_point": "信息安全",
+    "question": "下列属于计算机病毒常见传播途径的有（　）。",
+    "options": ["U盘等移动存储介质", "网络下载", "电子邮件", "正版光盘正常安装"],
+    "answer": "ABC",
+    "analysis": "移动存储、网络下载、电子邮件附件都是病毒常见传播途径；正版光盘正常安装不会传播病毒。"
+  },
+  {
+    "year": 2022,
+    "type": "多选题",
+    "knowledge_point": "数据结构与算法",
+    "question": "下列属于线性数据结构的有（　）。",
+    "options": ["栈", "队列", "二叉树", "线性表"],
+    "answer": "ABD",
+    "analysis": "栈、队列、线性表中的数据元素都是一对一的线性关系；二叉树是一对多的非线性结构。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "计算机基础知识",
+    "question": "第二代电子计算机的逻辑元件是（　）。",
+    "options": ["电子管", "晶体管", "中小规模集成电路", "大规模和超大规模集成电路"],
+    "answer": "B",
+    "analysis": "四代计算机逻辑元件依次为：第一代电子管、第二代晶体管、第三代中小规模集成电路、第四代大规模和超大规模集成电路。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "计算机基础知识",
+    "question": "计算机辅助设计的英文缩写是（　）。",
+    "options": ["CAI", "CAM", "CAD", "CAE"],
+    "answer": "C",
+    "analysis": "CAD 计算机辅助设计，CAI 计算机辅助教学，CAM 计算机辅助制造。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "数据表示与编码",
+    "question": "一个字节（Byte）由（　）个二进制位组成。",
+    "options": ["4", "8", "16", "32"],
+    "answer": "B",
+    "analysis": "1 Byte = 8 bit。1KB = 1024B，1MB = 1024KB，1GB = 1024MB。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "数据表示与编码",
+    "question": "下列字符中，ASCII 码值最大的是（　）。",
+    "options": ["“A”", "“a”", "“0”", "“9”"],
+    "answer": "B",
+    "analysis": "标准 ASCII 码中：数字“0”～“9”为 48～57，大写“A”～“Z”为 65～90，小写“a”～“z”为 97～122，故“a”最大。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "数据表示与编码",
+    "question": "汉字在计算机内部存储和处理采用的是（　）。",
+    "options": ["汉字输入码", "汉字国标码", "汉字机内码", "汉字字形码"],
+    "answer": "C",
+    "analysis": "计算机内部统一采用机内码存储和处理汉字；输入码用于输入，字形码用于显示和打印输出。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "下列存储器中，存取速度最快的是（　）。",
+    "options": ["硬盘", "U盘", "内存", "光盘"],
+    "answer": "C",
+    "analysis": "存储器速度层次：CPU 寄存器 > 高速缓存 Cache > 内存 > 硬盘/U盘/光盘。内存直接与 CPU 交换数据，速度远快于外存。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "操作系统Windows",
+    "question": "在 Windows 中，按 Delete 键删除文件的同时按住（　）键，文件将被直接删除而不放入回收站。",
+    "options": ["Ctrl", "Alt", "Shift", "Tab"],
+    "answer": "C",
+    "analysis": "Shift+Delete 为永久删除，不经过回收站；普通 Delete 删除的文件进入回收站。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "Word文字处理",
+    "question": "在 Word 中，能同时看到页眉、页脚、页边距等页面元素的视图是（　）。",
+    "options": ["普通视图", "页面视图", "大纲视图", "Web 版式视图"],
+    "answer": "B",
+    "analysis": "页面视图显示文档打印效果，可看到页眉、页脚、页边距、图片位置等，是 Word 默认视图。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "Excel 单元格地址 B3 表示（　）。",
+    "options": ["第 2 列第 3 行", "第 3 列第 2 行", "第 3 行第 3 列", "第 2 行第 3 列"],
+    "answer": "A",
+    "analysis": "单元格地址由列标（字母，B 表示第 2 列）和行号（数字，3 表示第 3 行）组成，即第 2 列第 3 行。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 中，若 A1=10、A2=20，在单元格中输入“=A1&A2”，显示结果是（　）。",
+    "options": ["30", "1020", "A1A2", "10&20"],
+    "answer": "B",
+    "analysis": "& 是文本连接运算符，把 10 和 20 连接成文本“1020”；求和应使用 A1+A2 或 SUM 函数。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 中引用其他工作表的单元格，正确的格式是（　）。",
+    "options": ["=Sheet2!A1", "=Sheet2(A1)", "=[Sheet2]A1", "=Sheet2:A1"],
+    "answer": "A",
+    "analysis": "引用其他工作表格式为：工作表名!单元格地址，如 =Sheet2!A1。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "PowerPoint演示文稿",
+    "question": "PowerPoint 2016 演示文稿默认的文件扩展名是（　）。",
+    "options": [".ppt", ".pptx", ".potx", ".ppsx"],
+    "answer": "B",
+    "analysis": "Office 2007 以后默认采用 XML 格式：.pptx 为演示文稿，.potx 为模板，.ppsx 为放映文件；.ppt 是 97-2003 旧格式。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "PowerPoint演示文稿",
+    "question": "从第一张幻灯片开始放映演示文稿，应按（　）。",
+    "options": ["F5", "F12", "Ctrl+F5", "F1"],
+    "answer": "A",
+    "analysis": "F5 从头放映，Shift+F5 从当前幻灯片开始放映，Esc 退出放映。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "TCP/IP 参考模型中，负责路由选择的层次是（　）。",
+    "options": ["网络接口层", "网际层", "传输层", "应用层"],
+    "answer": "B",
+    "analysis": "TCP/IP 四层模型中，网际层（IP 层）负责数据包的路由选择与转发；传输层提供 TCP/UDP 可靠或不可靠传输。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "IPv4 地址由（　）位二进制数组成。",
+    "options": ["16", "32", "48", "64"],
+    "answer": "B",
+    "analysis": "IPv4 地址长 32 位，通常用点分十进制表示，如 192.168.1.1；IPv6 地址长 128 位。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "下列 IP 地址中，属于 C 类地址的是（　）。",
+    "options": ["10.1.1.1", "130.1.1.1", "192.168.1.1", "224.0.0.1"],
+    "answer": "C",
+    "analysis": "A 类首字节 1～126，B 类 128～191，C 类 192～223，D 类 224～239 为组播地址。192.168.1.1 属于 C 类私有地址。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "HTTP 协议默认使用的端口号是（　）。",
+    "options": ["21", "25", "80", "110"],
+    "answer": "C",
+    "analysis": "HTTP 默认端口 80，HTTPS 默认 443；21 为 FTP，25 为 SMTP，110 为 POP3。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "数据库技术",
+    "question": "E-R 图中用于表示实体的图形是（　）。",
+    "options": ["矩形", "椭圆形", "菱形", "三角形"],
+    "answer": "A",
+    "analysis": "E-R 图中：矩形表示实体，椭圆形表示属性，菱形表示实体之间的联系。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "数据库技术",
+    "question": "SQL 中用于从数据库检索数据的关键字是（　）。",
+    "options": ["GET", "SELECT", "FIND", "QUERY"],
+    "answer": "B",
+    "analysis": "SQL 中查询语句为 SELECT；INSERT 插入、UPDATE 修改、DELETE 删除记录。"
+  },
+  {
+    "year": 2023,
+    "type": "单选题",
+    "knowledge_point": "信息安全",
+    "question": "加密和解密使用同一密钥的加密方式称为（　）。",
+    "options": ["对称加密", "非对称加密", "数字签名", "消息摘要"],
+    "answer": "A",
+    "analysis": "对称加密（如 DES、AES）加密与解密密钥相同，速度快，适合大数据量加密；非对称加密使用公钥和私钥，常用于数字签名和密钥交换。"
+  },
+  {
+    "year": 2023,
+    "type": "多选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "下列属于 Excel 统计（数字）函数的有（　）。",
+    "options": ["SUM", "AVERAGE", "COUNT", "LEFT"],
+    "answer": "ABC",
+    "analysis": "SUM、AVERAGE、COUNT 都用于数值统计；LEFT 是文本函数，从左侧截取字符。"
+  },
+  {
+    "year": 2023,
+    "type": "多选题",
+    "knowledge_point": "Word文字处理",
+    "question": "下列关于 Word 快捷键的叙述，正确的有（　）。",
+    "options": ["Ctrl+C 用于复制", "Ctrl+V 用于粘贴", "Ctrl+Z 用于撤销", "Ctrl+X 用于复制所选内容"],
+    "answer": "ABC",
+    "analysis": "Ctrl+X 是“剪切”而不是复制，D 错误；常见快捷键还有 Ctrl+A 全选、Ctrl+S 保存、Ctrl+H 替换。"
+  },
+  {
+    "year": 2023,
+    "type": "多选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "下列关于 TCP/IP 协议的叙述，正确的有（　）。",
+    "options": ["IP 协议属于网际层", "TCP 提供面向连接的可靠传输", "UDP 提供无连接传输", "HTTP 属于传输层协议"],
+    "answer": "ABC",
+    "analysis": "HTTP 是应用层协议，D 错误；IP 位于网际层，TCP 面向连接且可靠，UDP 无连接、不保证可靠。"
+  },
+  {
+    "year": 2023,
+    "type": "多选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "下列属于计算机输出设备的有（　）。",
+    "options": ["显示器", "打印机", "绘图仪", "扫描仪"],
+    "answer": "ABC",
+    "analysis": "显示器、打印机、绘图仪用于输出处理结果；扫描仪用于输入图像，属于输入设备。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "计算机基础知识",
+    "question": "世界上第一台电子数字计算机 ENIAC 诞生于（　）年。",
+    "options": ["1946", "1956", "1966", "1976"],
+    "answer": "A",
+    "analysis": "1946 年 2 月，世界第一台电子数字计算机 ENIAC 在美国宾夕法尼亚大学诞生。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "数据表示与编码",
+    "question": "十六进制数 1A 对应的十进制数是（　）。",
+    "options": ["25", "26", "27", "30"],
+    "answer": "B",
+    "analysis": "1A = 1×16¹ + 10×16⁰ = 16 + 10 = 26。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "下列设备中，既是输入设备又是输出设备的是（　）。",
+    "options": ["键盘", "显示器", "触摸屏", "打印机"],
+    "answer": "C",
+    "analysis": "触摸屏既可输入（触摸操作）又可输出（显示），是典型的输入输出两用设备。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "计算机软件系统一般分为（　）。",
+    "options": ["系统软件和应用软件", "操作系统和数据库管理系统", "程序和数据", "工具软件和杀毒软件"],
+    "answer": "A",
+    "analysis": "软件系统由系统软件（操作系统、语言处理程序、数据库管理系统等）和应用软件（办公软件、游戏等）两大类组成。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "Word文字处理",
+    "question": "在 Word 中插入页码，应使用的选项卡是（　）。",
+    "options": ["插入", "开始", "引用", "视图"],
+    "answer": "A",
+    "analysis": "页码、页眉页脚、图片、表格、超链接等都位于“插入”选项卡。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "Word文字处理",
+    "question": "在 Word 中设置纸张大小、页边距和纸张方向，应使用（　）。",
+    "options": ["“布局”（页面布局）选项卡", "“开始”选项卡", "“引用”选项卡", "“审阅”选项卡"],
+    "answer": "A",
+    "analysis": "页面设置（纸张大小、页边距、分栏、纸张方向）位于“布局”（Word 2010 及以前称为“页面布局”）选项卡。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 中要输入分数“1/2”，应先输入（　）。",
+    "options": ["0 和一个空格", "等号", "双引号", "井号"],
+    "answer": "A",
+    "analysis": "直接输入 1/2 会被识别为日期。正确方法是输入“0 1/2”（0 后跟空格再输分数），或先把单元格设为文本格式。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "单元格 B1 中的公式为 =A1*2，将公式复制到 B2 后变为（　）。",
+    "options": ["=A1*2", "=A2*2", "=B1*2", "=A1*3"],
+    "answer": "B",
+    "analysis": "A1 是相对引用，公式复制到下一行时行号自动加 1，变为 =A2*2。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 中，统计区域中“数字”单元格的个数应使用（　）函数。",
+    "options": ["COUNT", "COUNTA", "COUNTBLANK", "SUM"],
+    "answer": "A",
+    "analysis": "COUNT 统计含数字的单元格个数；COUNTA 统计非空单元格个数；COUNTBLANK 统计空单元格个数。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "PowerPoint演示文稿",
+    "question": "要让所有幻灯片的标题统一采用某种字体格式，最高效的方法是修改（　）。",
+    "options": ["幻灯片母版", "配色方案", "页面背景", "单个对象格式"],
+    "answer": "A",
+    "analysis": "母版统一控制所有幻灯片的标题、正文样式与版式，修改一次即可应用到全部幻灯片。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "万维网（WWW）中浏览网页使用的协议是（　）。",
+    "options": ["FTP", "HTTP", "SMTP", "POP3"],
+    "answer": "B",
+    "analysis": "HTTP（超文本传输协议）用于浏览网页；FTP 用于文件传输，SMTP 用于发送邮件，POP3 用于接收邮件。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "数据结构与算法",
+    "question": "深度为 k 的二叉树（k≥1）最多有（　）个节点。",
+    "options": ["2^k − 1", "2^k", "k²", "k(k+1)/2"],
+    "answer": "A",
+    "analysis": "深度为 k 的满二叉树节点数最多，为 2⁰+2¹+…+2^(k−1) = 2^k − 1。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "数据库技术",
+    "question": "SQL 语句中，删除表中数据但保留表结构的是（　）。",
+    "options": ["DROP TABLE", "DELETE FROM", "ALTER TABLE", "CREATE TABLE"],
+    "answer": "B",
+    "analysis": "DELETE FROM 删除表中的记录但保留表结构；DROP TABLE 连同表结构一起删除；ALTER 修改表结构。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "程序设计基础",
+    "question": "下列叙述正确的是（　）。",
+    "options": ["机器语言程序可被计算机直接执行", "汇编语言程序可被计算机直接执行", "高级语言程序无需编译解释即可执行", "所有程序都由操作系统编译"],
+    "answer": "A",
+    "analysis": "只有机器语言（二进制指令）能被计算机直接执行；汇编语言需经汇编、高级语言需经编译或解释后才能执行。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "多媒体技术",
+    "question": "屏幕分辨率 1920×1080 表示（　）。",
+    "options": ["横向 1920 个像素、纵向 1080 个像素", "可显示 1920 万种颜色", "刷新率为 1920Hz", "屏幕长 1920 毫米"],
+    "answer": "A",
+    "analysis": "分辨率指屏幕上横向和纵向的像素数目，乘积越大显示越清晰。"
+  },
+  {
+    "year": 2024,
+    "type": "单选题",
+    "knowledge_point": "新一代信息技术",
+    "question": "下列不属于大数据典型特征（4V）的是（　）。",
+    "options": ["数据量大", "数据类型多样", "价值密度高", "处理速度快"],
+    "answer": "C",
+    "analysis": "大数据 4V：Volume（量大）、Variety（多样）、Velocity（快速）、Value（价值密度低，即海量数据中有价值的部分少）。"
+  },
+  {
+    "year": 2024,
+    "type": "多选题",
+    "knowledge_point": "新一代信息技术",
+    "question": "下列属于物联网应用的有（　）。",
+    "options": ["智能家居", "智慧医疗", "车联网", "Excel 电子表格"],
+    "answer": "ABC",
+    "analysis": "物联网通过传感器实现物与物互联，应用于智能家居、智慧医疗、车联网等；Excel 是本地办公软件，与物联网无关。"
+  },
+  {
+    "year": 2024,
+    "type": "多选题",
+    "knowledge_point": "多媒体技术",
+    "question": "常见的多媒体元素包括（　）。",
+    "options": ["文本", "图形图像", "音频", "打印机"],
+    "answer": "ABC",
+    "analysis": "多媒体元素包括文本、图形、图像、音频、动画、视频；打印机是输出设备，不是媒体元素。"
+  },
+  {
+    "year": 2024,
+    "type": "多选题",
+    "knowledge_point": "数据库技术",
+    "question": "下列属于 SQL 数据操作语言（DML）的有（　）。",
+    "options": ["SELECT", "INSERT", "UPDATE", "CREATE"],
+    "answer": "ABC",
+    "analysis": "DML（数据操纵语言）包括 SELECT、INSERT、UPDATE、DELETE；CREATE、ALTER、DROP 属于 DDL（数据定义语言）。"
+  },
+  {
+    "year": 2024,
+    "type": "多选题",
+    "knowledge_point": "程序设计基础",
+    "question": "面向对象程序设计的三大特性包括（　）。",
+    "options": ["封装", "继承", "多态", "编译"],
+    "answer": "ABC",
+    "analysis": "面向对象三大特性是封装、继承、多态；编译是高级语言的执行方式之一，不是面向对象特性。"
+  },
+  {
+    "year": 2024,
+    "type": "多选题",
+    "knowledge_point": "信息安全",
+    "question": "下列做法有利于保障信息安全的有（　）。",
+    "options": ["为不同网站设置不同的高强度密码", "及时安装系统安全补丁", "不随意打开来历不明的邮件附件", "在公共 WiFi 下进行网银转账"],
+    "answer": "ABC",
+    "analysis": "公共 WiFi 安全性差，容易被窃听，不应进行网银转账等敏感操作，D 错误。"
+  },
+  {
+    "year": 2024,
+    "type": "多选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "下列关于存储器的说法，正确的有（　）。",
+    "options": ["RAM 中的信息断电后会丢失", "ROM 中的信息断电后一般不会丢失", "硬盘属于外存储器", "硬盘断电后存储的信息会丢失"],
+    "answer": "ABC",
+    "analysis": "硬盘采用磁存储技术，断电后信息不会丢失，D 错误；RAM 易失、ROM 非易失、硬盘和内存分别属于外存和内存。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "数据表示与编码",
+    "question": "十进制小数 0.625 对应的二进制小数是（　）。",
+    "options": ["0.101", "0.11", "0.1", "0.1001"],
+    "answer": "A",
+    "analysis": "0.625 = 0.5 + 0.125 = 2⁻¹ + 2⁻³，即二进制 0.101。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "数据表示与编码",
+    "question": "下列字符中，ASCII 码值最小的是（　）。",
+    "options": ["“A”", "“a”", "“0”", "“9”"],
+    "answer": "C",
+    "analysis": "数字字符“0”的 ASCII 码为 48，小于“A”（65）、“a”（97）和“9”（57）。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "通常把计算机的（　）集成在一起称为 CPU。",
+    "options": ["运算器和控制器", "运算器和存储器", "控制器和存储器", "主机和外设"],
+    "answer": "A",
+    "analysis": "CPU（中央处理器）由运算器和控制器两部分组成，是计算机的核心部件。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "计算机中 Cache（高速缓冲存储器）的主要作用是（　）。",
+    "options": ["解决 CPU 与内存速度不匹配的问题", "扩大外存容量", "存放输入数据", "打印输出结果"],
+    "answer": "A",
+    "analysis": "Cache 位于 CPU 与内存之间，存取速度极快，用于缓存 CPU 频繁访问的数据和指令，缓解 CPU 与内存的速度矛盾。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "操作系统Windows",
+    "question": "下列关于操作系统的叙述，正确的是（　）。",
+    "options": ["操作系统负责管理计算机的全部硬件和软件资源", "操作系统只管理硬件", "操作系统只管理应用软件", "操作系统属于应用软件"],
+    "answer": "A",
+    "analysis": "操作系统是最基本的系统软件，统一管理 CPU、存储器、设备、文件以及进程等硬件和软件资源。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "Word文字处理",
+    "question": "在 Word 中，要让同一文档中同时存在横向和纵向页面，应插入（　）。",
+    "options": ["分节符", "分栏符", "换行符", "制表符"],
+    "answer": "A",
+    "analysis": "页面方向、页边距、页眉页脚等版式设置以“节”为单位，要混排需插入分节符后分别设置。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 中，要统计 B 列中成绩大于 90 的记录数，应使用（　）。",
+    "options": ["COUNTIF(B:B,\">90\")", "COUNT(B:B)", "SUM(B:B)", "AVERAGE(B:B)"],
+    "answer": "A",
+    "analysis": "COUNTIF 为条件计数函数；COUNT 统计数字个数，SUM 求和，AVERAGE 求平均值，均不带条件。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 中，单元格显示“####”表示（　）。",
+    "options": ["列宽不足", "公式错误", "单元格为空", "文件已损坏"],
+    "answer": "A",
+    "analysis": "当数字或日期因列宽不够而无法完整显示时，单元格显示“####”，增大列宽即可解决；公式错误一般显示 #DIV/0!、#VALUE! 等。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "PowerPoint演示文稿",
+    "question": "在 PowerPoint 中，要使幻灯片中的对象按设定的路线运动，应使用（　）。",
+    "options": ["动作路径", "幻灯片切换", "配色方案", "幻灯片版式"],
+    "answer": "A",
+    "analysis": "动画中的“动作路径”可让对象沿绘制的路线移动；切换效果作用于幻灯片之间，与对象无关。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "路由器的主要功能是（　）。",
+    "options": ["在不同网络之间转发数据包并选择转发路径", "查杀计算机病毒", "编辑文档", "存储大量数据"],
+    "answer": "A",
+    "analysis": "路由器工作在网络层，负责不同网络之间的数据包转发和路径选择（路由选择）。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "数据结构与算法",
+    "question": "在有序表中采用二分（折半）查找，其平均时间复杂度是（　）。",
+    "options": ["O(n)", "O(log₂n)", "O(n²)", "O(1)"],
+    "answer": "B",
+    "analysis": "每次比较将查找范围缩小一半，比较次数约为 log₂n；顺序查找为 O(n)，但对表的顺序无要求。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "数据结构与算法",
+    "question": "二叉树后序遍历的访问顺序是（　）。",
+    "options": ["根、左、右", "左、根、右", "左、右、根", "右、左、根"],
+    "answer": "C",
+    "analysis": "前序遍历“根左右”，中序遍历“左根右”，后序遍历“左右根”。（记忆：根的位置在前/中/后）"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "数据库技术",
+    "question": "规定“性别”字段只能取“男”或“女”，这属于（　）。",
+    "options": ["用户定义完整性", "实体完整性", "参照完整性", "物理完整性"],
+    "answer": "A",
+    "analysis": "实体完整性要求主键非空且唯一；参照完整性要求外键取值须来自被参照表；取值范围等业务规则属于用户定义完整性。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "数据库技术",
+    "question": "SQL 中，将查询结果按某一字段分组，应使用（　）子句。",
+    "options": ["GROUP BY", "ORDER BY", "HAVING", "WHERE"],
+    "answer": "A",
+    "analysis": "GROUP BY 用于分组；ORDER BY 用于排序；WHERE 在分组前筛选；HAVING 在分组后筛选。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "程序设计基础",
+    "question": "在传统程序流程图中，平行四边形符号表示（　）。",
+    "options": ["输入/输出", "判断", "处理运算", "流程开始与结束"],
+    "answer": "A",
+    "analysis": "流程图符号：圆角矩形表起止，平行四边形表输入输出，矩形表处理，菱形表判断，箭头表流程线。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "新一代信息技术",
+    "question": "云计算中，提供虚拟机、存储、网络等基础设施服务的模式是（　）。",
+    "options": ["IaaS", "PaaS", "SaaS", "DBMS"],
+    "answer": "A",
+    "analysis": "IaaS 基础设施即服务（虚拟机、存储、网络），PaaS 平台即服务（开发平台），SaaS 软件即服务（直接使用软件）。"
+  },
+  {
+    "year": 2025,
+    "type": "单选题",
+    "knowledge_point": "新一代信息技术",
+    "question": "人工智能的英文缩写是（　）。",
+    "options": ["AI", "IoT", "VR", "5G"],
+    "answer": "A",
+    "analysis": "AI（Artificial Intelligence）人工智能；IoT 物联网；VR 虚拟现实；5G 第五代移动通信技术。"
+  },
+  {
+    "year": 2025,
+    "type": "多选题",
+    "knowledge_point": "新一代信息技术",
+    "question": "下列关于 5G 的说法，正确的有（　）。",
+    "options": ["传输速率高", "网络时延低", "支持海量设备连接", "只能用于手机通信"],
+    "answer": "ABC",
+    "analysis": "5G 具有高速率、低时延、大连接三大特点，还可用于工业互联网、车联网、远程医疗等，D 错误。"
+  },
+  {
+    "year": 2025,
+    "type": "多选题",
+    "knowledge_point": "操作系统Windows",
+    "question": "下列关于 Windows 文件和文件夹的说法，正确的有（　）。",
+    "options": ["同一文件夹内文件名不能重复", "文件名通常由主文件名和扩展名组成", "扩展名常用来标识文件类型", "文件名中可以包含 \\ / : * ? \" < > | 等字符"],
+    "answer": "ABC",
+    "analysis": "\\ / : * ? \" < > | 是 Windows 文件名的非法字符，D 错误；扩展名如 .docx、.xlsx 用于标识文件类型。"
+  },
+  {
+    "year": 2025,
+    "type": "多选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "下列属于计算机网络拓扑结构的有（　）。",
+    "options": ["星型", "总线型", "环型", "立方体"],
+    "answer": "ABC",
+    "analysis": "常见拓扑结构有星型、总线型、环型、树型、网状型等；“立方体”不是网络拓扑结构。"
+  },
+  {
+    "year": 2025,
+    "type": "多选题",
+    "knowledge_point": "数据结构与算法",
+    "question": "下列关于栈和队列的说法，正确的有（　）。",
+    "options": ["栈是后进先出结构", "队列是先进先出结构", "栈只能在一端进行插入和删除", "队列只能在同一端进行插入和删除"],
+    "answer": "ABC",
+    "analysis": "队列在一端插入（队尾）、另一端删除（队头），并非同一端操作，D 错误。"
+  },
+  {
+    "year": 2025,
+    "type": "多选题",
+    "knowledge_point": "信息安全",
+    "question": "下列属于恶意程序的有（　）。",
+    "options": ["计算机病毒", "木马程序", "勒索软件", "应用软件"],
+    "answer": "ABC",
+    "analysis": "病毒、木马、勒索软件都属于恶意程序；应用软件本身是为用户正常用途开发的软件。"
+  },
+  {
+    "year": 2025,
+    "type": "多选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "下列属于系统软件的有（　）。",
+    "options": ["操作系统（如 Windows）", "语言处理程序（如编译程序）", "数据库管理系统", "图像处理软件（如 Photoshop）"],
+    "answer": "ABC",
+    "analysis": "系统软件包括操作系统、语言处理程序、数据库管理系统、服务性程序等；Photoshop 是面向特定应用的软件，属于应用软件。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "计算机基础知识",
+    "question": "在冯·诺依曼计算机中，指令和数据均以（　）形式存放在存储器中。",
+    "options": ["二进制", "八进制", "十进制", "十六进制"],
+    "answer": "A",
+    "analysis": "冯·诺依曼计算机的存储程序原理规定：指令和数据都用二进制表示，以同等地位存放在存储器中。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "数据表示与编码",
+    "question": "十进制数 127 转换为二进制数是（　）。",
+    "options": ["1111111", "1111110", "1000000", "1111001"],
+    "answer": "A",
+    "analysis": "127 = 64+32+16+8+4+2+1 = 2⁷ − 1，对应二进制为 1111111。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "计算机系统组成",
+    "question": "下列属于计算机外部设备（外设）的是（　）。",
+    "options": ["CPU", "内存储器", "硬盘", "主板"],
+    "answer": "C",
+    "analysis": "CPU、内存、主板属于主机（内部设备）；硬盘、显示器、鼠标、打印机等属于外部设备。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "操作系统Windows",
+    "question": "Windows 中的“剪贴板”是（　）。",
+    "options": ["内存中临时存放交换信息的区域", "硬盘上的一个文件夹", "外存中的区域", "ROM 中的区域"],
+    "answer": "A",
+    "analysis": "剪贴板是内存中的一块临时区域，用于实现不同程序间的数据交换，计算机重启后其内容会丢失。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "操作系统Windows",
+    "question": "在 Windows 中快速显示桌面的快捷键是（　）。",
+    "options": ["Win+D", "Win+E", "Win+R", "Win+L"],
+    "answer": "A",
+    "analysis": "Win+D 显示/还原桌面；Win+E 打开资源管理器；Win+R 打开“运行”；Win+L 锁定计算机。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "Word文字处理",
+    "question": "在 Word 中，要让当前页内容结束后直接另起一页，应插入（　）。",
+    "options": ["分页符", "制表符", "换行符（Shift+Enter）", "若干空格"],
+    "answer": "A",
+    "analysis": "分页符强制另起一页；换行符只在段内换行不另起页；用回车键加空格排版会造成版面混乱。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 中，公式 =MAX(A1:A5) 的作用是（　）。",
+    "options": ["返回区域中的最小值", "返回区域中的最大值", "求区域之和", "统计区域中数字个数"],
+    "answer": "B",
+    "analysis": "MAX 返回最大值，MIN 返回最小值，SUM 求和，COUNT 统计数字个数。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 中输入身份证号时，为避免显示成科学计数法，应先将单元格设置为（　）。",
+    "options": ["文本格式", "数值格式", "日期格式", "货币格式"],
+    "answer": "A",
+    "analysis": "身份证号位数多且首位可能为 0，设为文本格式可完整保存；也可在输入前先输入英文单引号 '。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "Excel电子表格",
+    "question": "在 Excel 公式中，引用 A$1 属于（　）。",
+    "options": ["相对引用", "绝对引用", "混合引用", "三维引用"],
+    "answer": "C",
+    "analysis": "列标 A 前无 $（可变）、行号 1 前有 $（固定），列变行不变，属于混合引用。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "PowerPoint演示文稿",
+    "question": "在 PowerPoint 中，超链接可以指向（　）。",
+    "options": ["幻灯片、文件、网页等多种对象", "只能是当前演示文稿中的幻灯片", "只能是外部文件", "只能是图片"],
+    "answer": "A",
+    "analysis": "超链接可指向本演示文稿内的幻灯片、其他文件、网页、电子邮件地址等，常用于制作交互式课件。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "数据结构与算法",
+    "question": "线性表采用顺序存储结构时，按下标随机存取第 i 个元素的时间复杂度是（　）。",
+    "options": ["O(1)", "O(n)", "O(log n)", "O(n²)"],
+    "answer": "A",
+    "analysis": "顺序表可按地址公式直接计算第 i 个元素位置，随机存取任一元素只需一步，时间为常量 O(1)。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "数据库技术",
+    "question": "SQL 中，向表内插入一条新记录应使用（　）语句。",
+    "options": ["INSERT INTO", "UPDATE", "DELETE", "SELECT"],
+    "answer": "A",
+    "analysis": "INSERT INTO 表名 VALUES(...) 插入记录；UPDATE 修改记录；DELETE 删除记录；SELECT 查询记录。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "多媒体技术",
+    "question": "视频是由连续播放的（　）组成的。",
+    "options": ["帧", "采样点", "矢量", "波形"],
+    "answer": "A",
+    "analysis": "视频由一幅幅连续的静态图像（帧）快速播放形成，每秒播放的帧数即帧率（fps）。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "信息安全",
+    "question": "下列密码中，安全性最高的是（　）。",
+    "options": ["123456", "abc123", "Aa@2024xK9", "888888"],
+    "answer": "C",
+    "analysis": "高强度密码应长且包含大小写字母、数字、符号等多种字符，避免连续数字、生日、单词等易被猜到的组合。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "信息安全",
+    "question": "数字签名技术不能实现的是（　）。",
+    "options": ["验证发送方身份", "保证数据完整性", "防止发送方抵赖", "对报文内容加密传输"],
+    "answer": "D",
+    "analysis": "数字签名可实现身份认证、完整性校验和不可否认性；对报文内容加密、防止他人窃读属于加密技术的功能。"
+  },
+  {
+    "year": 2026,
+    "type": "单选题",
+    "knowledge_point": "新一代信息技术",
+    "question": "物联网的三层体系结构从低到高依次是（　）。",
+    "options": ["感知层、网络层、应用层", "应用层、感知层、网络层", "网络层、感知层、应用层", "数据层、处理层、展示层"],
+    "answer": "A",
+    "analysis": "感知层（传感器、RFID 采集信息）→ 网络层（传输数据）→ 应用层（智能处理与服务）。"
+  },
+  {
+    "year": 2026,
+    "type": "多选题",
+    "knowledge_point": "新一代信息技术",
+    "question": "下列属于人工智能应用的有（　）。",
+    "options": ["语音识别", "人脸识别", "机器翻译", "磁盘格式化"],
+    "answer": "ABC",
+    "analysis": "语音识别、人脸识别、机器翻译都属于人工智能典型应用；磁盘格式化是基本的存储器管理操作。"
+  },
+  {
+    "year": 2026,
+    "type": "多选题",
+    "knowledge_point": "多媒体技术",
+    "question": "下列关于多媒体技术的说法，正确的有（　）。",
+    "options": ["JPEG 常用于静态图像压缩", "MP3 是常见的音频格式", "采样频率越高，越接近原始声音", "多媒体就是指视频"],
+    "answer": "ABC",
+    "analysis": "多媒体包含文本、图像、音频、动画、视频等多种媒体类型，不只是视频，D 错误。"
+  },
+  {
+    "year": 2026,
+    "type": "多选题",
+    "knowledge_point": "计算机基础知识",
+    "question": "下列关于计算机发展史的说法，正确的有（　）。",
+    "options": ["第一代计算机采用电子管", "第二代计算机采用晶体管", "第三代计算机采用中小规模集成电路", "第四代计算机采用超导电路"],
+    "answer": "ABC",
+    "analysis": "第四代计算机采用大规模和超大规模集成电路，D 错误。"
+  },
+  {
+    "year": 2026,
+    "type": "多选题",
+    "knowledge_point": "程序设计基础",
+    "question": "下列关于程序设计的叙述，正确的有（　）。",
+    "options": ["算法必须具有有穷性", "结构化程序由顺序、选择、循环三种结构组成", "面向对象具有封装、继承、多态特性", "汇编语言程序能被计算机直接执行"],
+    "answer": "ABC",
+    "analysis": "只有机器语言能被计算机直接执行，汇编语言需汇编后执行，D 错误。"
+  },
+  {
+    "year": 2026,
+    "type": "多选题",
+    "knowledge_point": "计算机网络与Internet",
+    "question": "下列关于 Internet 的说法，正确的有（　）。",
+    "options": ["IP 地址按首字节范围分为 A、B、C、D、E 五类", "域名必须通过 DNS 解析成 IP 地址才能访问主机", "HTTP 协议默认端口号为 80", "TCP 是无连接的传输协议"],
+    "answer": "ABC",
+    "analysis": "TCP 面向连接、UDP 才是无连接协议，D 错误；其余说法均正确。"
+  },
+  {
+    "year": 2026,
+    "type": "多选题",
+    "knowledge_point": "数据结构与算法",
+    "question": "下列关于数据结构的说法，正确的有（　）。",
+    "options": ["栈是后进先出的结构", "队列是先进先出的结构", "折半查找要求数据必须有序", "顺序查找要求数据必须有序"],
+    "answer": "ABC",
+    "analysis": "顺序查找对数据是否有序没有要求；折半（二分）查找必须在有序表上进行，D 错误。"
+  }
+]

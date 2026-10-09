@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="山东专升本计算机科目近五年真题刷题页面：单选题、多选题、判分解析、错题本、按年份和知识点筛选，手机端适配。" />
+  <title>山东专升本 · 计算机刷题系统</title>
+  <style>
+    /* ==================== 1. 全局基础样式 ==================== */
+    :root {
+      --primary: #2563eb;        /* 主题蓝色 */
+      --primary-dark: #1d4ed8;
+      --success: #16a34a;        /* 正确绿 */
+      --danger: #dc2626;         /* 错误红 */
+      --warning: #f59e0b;        /* 提示黄 */
+      --bg: #f1f5f9;             /* 页面背景灰 */
+      --card: #ffffff;           /* 卡片白 */
+      --text: #1e293b;           /* 正文颜色 */
+      --text-sub: #64748b;       /* 次要文字 */
+      --border: #e2e8f0;         /* 边框颜色 */
+      --radius: 12px;            /* 圆角 */
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+      padding-bottom: 90px; /* 预留底部操作栏空间 */
+    }
+
+    .container {
+      max-width: 780px;   /* 手机全宽、电脑上居中限宽 */
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+
+    /* ==================== 2. 顶部标题区 ==================== */
+    header {
+      background: linear-gradient(135deg, var(--primary), #4f46e5);
+      color: #fff;
+      padding: 18px 0 16px;
+      margin-bottom: 12px;
+      border-radius: 0 0 18px 18px;
+      text-align: center;
+    }
+    header h1 { font-size: 20px; letter-spacing: 1px; }
+    header p { font-size: 12px; opacity: .9; margin-top: 4px; }
+
+    /* ==================== 3. 筛选卡片 ==================== */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 14px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, .06);
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;   /* 手机两列 */
+      gap: 10px;
+    }
+    .filter-item label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 4px;
+    }
+    .filter-item select {
+      width: 100%;
+      padding: 9px 10px;
+      font-size: 15px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: linear-gradient(45deg, transparent 50%, #94a3b8 50%),
+                        linear-gradient(135deg, #94a3b8 50%, transparent 50%);
+      background-position: calc(100% - 16px) 55%, calc(100% - 11px) 55%;
+      background-size: 5px 5px, 5px 5px;
+      background-repeat: no-repeat;
+    }
+    .filter-item select:focus { border-color: var(--primary); }
+
+    /* 按钮通用样式 */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: opacity .15s, transform .1s;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn:disabled { opacity: .45; cursor: not-allowed; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:not(:disabled):hover { background: var(--primary-dark); }
+    .btn-outline { background: #fff; color: var(--primary); border: 1px solid var(--primary); }
+    .btn-ghost { background: #f1f5f9; color: var(--text); }
+    .btn-danger-soft { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
+    .btn-block { width: 100%; }
+
+    .filter-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .filter-actions .btn { flex: 1; min-width: 110px; }
+
+    .wrongbook-tip {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-top: 10px;
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+
+    /* ==================== 4. 进度与统计条 ==================== */
+    .progress-wrap { display: none; }             /* 开始练习后才显示 */
+    .progress-wrap.show { display: block; }
+
+    .progress-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .progress-head .stats b { color: var(--primary); }
+    .progress-head .stats .err { color: var(--danger); }
+
+    .progress-bar {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .progress-bar > i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--primary), #4f46e5);
+      border-radius: 99px;
+      transition: width .25s;
+    }
+
+    /* ==================== 5. 题目卡片 ==================== */
+    .q-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+    .tag {
+      font-size: 12px;
+      padding: 2px 9px;
+      border-radius: 99px;
+      background: #e0e7ff;
+      color: #4338ca;
+    }
+    .tag.type-single { background: #dbeafe; color: #1d4ed8; }
+    .tag.type-multi  { background: #fae8ff; color: #a21caf; }
+    .tag.year { background: #ecfdf5; color: #047857; }
+
+    .q-no { font-size: 14px; color: var(--text-sub); margin-bottom: 6px; }
+    .q-title {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      word-break: break-word;
+    }
+    .q-hint { font-size: 12px; color: var(--warning); margin: -8px 0 12px; }
+
+    /* 选项样式（label 整行可点，适合手机触控） */
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      background: #fff;
+      transition: border-color .15s, background .15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .option:hover { border-color: #bfdbfe; }
+    .option input { position: absolute; opacity: 0; pointer-events: none; }
+
+    /* 选项字母徽标：单选圆形、多选方形 */
+    .option .letter {
+      flex: 0 0 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      color: var(--text-sub);
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .option.multi .letter { border-radius: 6px; }
+    .option .text { font-size: 15.5px; word-break: break-word; }
+
+    .option.picked { border-color: var(--primary); background: #eff6ff; }
+    .option.picked .letter { background: var(--primary); color: #fff; }
+    .option.is-key { border-color: var(--success); background: #f0fdf4; }
+    .option.is-key .letter { background: var(--success); color: #fff; }
+    .option.is-wrong { border-color: var(--danger); background: #fef2f2; }
+    .option.is-wrong .letter { background: var(--danger); color: #fff; }
+    .option.disabled { cursor: default; }
+
+    /* 判分结果横幅 */
+    .result-banner {
+      display: none;
+      border-radius: 10px;
+      padding: 11px 12px;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .result-banner.show { display: block; }
+    .result-banner.ok { background: #f0fdf4; color: var(--success); border: 1px solid #bbf7d0; }
+    .result-banner.no { background: #fef2f2; color: var(--danger); border: 1px solid #fecaca; }
+    .result-banner .key { font-weight: 700; }
+
+    /* 解析区域 */
+    .analysis {
+      display: none;
+      background: #f8fafc;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 10px 10px 0;
+      padding: 12px;
+      font-size: 14.5px;
+      color: #334155;
+      word-break: break-word;
+    }
+    .analysis.show { display: block; }
+    .analysis b { color: var(--primary); display: block; margin-bottom: 4px; }
+
+    /* ==================== 6. 底部操作栏（吸底） ==================== */
+    .action-bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, .97);
+      border-top: 1px solid var(--border);
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      display: none;
+      z-index: 50;
+      backdrop-filter: blur(6px);
+    }
+    .action-bar.show { display: block; }
+    .action-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+    }
+    .action-inner .btn { flex: 1; padding: 12px 8px; font-size: 16px; }
+
+    /* ==================== 7. 答题卡 ==================== */
+    .sheet { display: none; }
+    .sheet.show { display: block; }
+    .sheet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+      gap: 8px;
+      max-height: 220px;
+      overflow-y: auto;
+      padding-top: 4px;
+    }
+    .sheet-grid button {
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 14px;
+      color: var(--text);
+      cursor: pointer;
+    }
+    .sheet-grid button.cur { border-color: var(--primary); color: var(--primary); font-weight: 700; background: #eff6ff; }
+    .sheet-grid button.right { background: #f0fdf4; border-color: #86efac; color: var(--success); }
+    .sheet-grid button.wrong { background: #fef2f2; border-color: #fca5a5; color: var(--danger); }
+
+    /* ==================== 8. 成绩弹窗 / 提示 ==================== */
+    .modal-mask {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, .55);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-mask.show { display: flex; }
+    .modal {
+      background: #fff;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 360px;
+      padding: 22px 18px 18px;
+      text-align: center;
+      animation: pop .18s ease-out;
+    }
+    @keyframes pop { from { transform: scale(.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .modal h3 { font-size: 18px; margin-bottom: 12px; }
+    .score-ring { font-size: 40px; font-weight: 800; color: var(--primary); line-height: 1.2; }
+    .score-ring small { font-size: 15px; color: var(--text-sub); font-weight: 400; }
+    .score-detail { display: flex; justify-content: center; gap: 18px; margin: 14px 0 16px; font-size: 14px; }
+    .score-detail .ok { color: var(--success); }
+    .score-detail .no { color: var(--danger); }
+    .score-detail .skip { color: var(--text-sub); }
+    .modal .btn { width: 100%; margin-top: 8px; }
+
+    #toast {
+      position: fixed;
+      left: 50%;
+      bottom: 110px;
+      transform: translateX(-50%) translateY(10px);
+      background: rgba(15, 23, 42, .92);
+      color: #fff;
+      font-size: 14px;
+      padding: 9px 16px;
+      border-radius: 99px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s, transform .2s;
+      z-index: 200;
+      max-width: 86vw;
+      text-align: center;
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* 加载/错误提示 */
+    .notice {
+      display: none;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      font-size: 14px;
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .notice.show { display: block; }
+    .loading { text-align: center; color: var(--text-sub); padding: 40px 0; font-size: 14px; }
+
+    /* ==================== 9. 大屏（平板/电脑）适配 ==================== */
+    @media (min-width: 640px) {
+      body { font-size: 16px; }
+      header h1 { font-size: 24px; }
+      .filter-grid { grid-template-columns: repeat(4, 1fr); }
+      .q-title { font-size: 18px; }
+      .action-inner { max-width: 780px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ 顶部标题 ============ -->
+  <header>
+    <div class="container">
+      <h1>📚 山东专升本 · 计算机刷题</h1>
+      <p>近五年真题题库 · 单选 / 多选 · 判分解析 · 错题本自动保存</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- 题库加载失败时的提示 -->
+    <div class="notice" id="loadNotice"></div>
+
+    <!-- ============ 筛选与开始练习 ============ -->
+    <section class="card" id="filterCard">
+      <div class="filter-grid">
+        <div class="filter-item">
+          <label for="selYear">年份</label>
+          <select id="selYear"><option value="all">全部年份</option></select>
+        </div>
+        <div class="filter-item">
+          <label for="selPoint">知识点</label>
+          <select id="selPoint"><option value="all">全部知识点</option></select>
+        </div>
+        <div class="filter-item">
+          <label for="selType">题型</label>
+          <select id="selType">
+            <option value="all">全部题型</option>
+            <option value="单选题">单选题</option>
+            <option value="多选题">多选题</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label for="selMode">练习模式</label>
+          <select id="selMode">
+            <option value="seq">顺序练习</option>
+            <option value="random">随机练习</option>
+            <option value="wrong">错题重练</option>
+          </select>
+        </div>
+        <div class="filter-item">
+          <label for="selCount">题量</label>
+          <select id="selCount">
+            <option value="all">全部题目</option>
+            <option value="10">10 题</option>
+            <option value="20">20 题</option>
+            <option value="30">30 题</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-actions">
+        <button class="btn btn-primary" id="btnStart">开始练习</button>
+        <button class="btn btn-outline" id="btnSheetToggle">答题卡</button>
+      </div>
+
+      <div class="wrongbook-tip">
+        📕 错题本：<b id="wrongCount">0</b> 题（自动保存在本机浏览器中）
+        <button class="btn btn-danger-soft" id="btnClearWrong" style="float:right;padding:4px 10px;font-size:13px;">清空错题本</button>
+      </div>
+    </section>
+
+    <!-- ============ 进度统计 ============ -->
+    <section class="card progress-wrap" id="progressWrap">
+      <div class="progress-head">
+        <span class="stats" id="statsText">已答 <b>0</b> 题 · 正确 <b>0</b> · 错误 <b class="err">0</b></span>
+        <span>
+          <span id="posText">0 / 0</span>
+          <button class="btn btn-ghost" id="btnFinish" style="padding:4px 12px;font-size:13px;margin-left:8px;">交卷</button>
+        </span>
+      </div>
+      <div class="progress-bar"><i id="progressBar"></i></div>
+    </section>
+
+    <!-- ============ 题目区域 ============ -->
+    <section class="card" id="questionCard" style="display:none;">
+      <div class="q-meta" id="qMeta"></div>
+      <div class="q-no" id="qNo"></div>
+      <div class="q-title" id="qTitle"></div>
+      <div class="q-hint" id="qHint" style="display:none;"></div>
+      <div id="qOptions"></div>
+
+      <!-- 判分结果 -->
+      <div class="result-banner" id="resultBanner"></div>
+
+      <!-- 题目解析 -->
+      <div class="analysis" id="analysisBox"><b>📖 解析</b><span id="analysisText"></span></div>
+    </section>
+
+    <p class="loading" id="loadingTip">⏳ 题库加载中…</p>
+
+    <!-- ============ 答题卡 ============ -->
+    <section class="card sheet" id="sheetBox">
+      <div class="sheet-grid" id="sheetGrid"></div>
+    </section>
+
+    <p style="text-align:center;font-size:12px;color:#94a3b8;margin:18px 0 8px;">
+      纯前端静态页面 · 题库文件 questions.json · 错题本存于 localStorage
+    </p>
+  </div>
+
+  <!-- ============ 底部操作栏（吸底） ============ -->
+  <div class="action-bar" id="actionBar">
+    <div class="action-inner">
+      <button class="btn btn-ghost" id="btnPrev">◀ 上一题</button>
+      <button class="btn btn-primary" id="btnMain">提交答案</button>
+      <button class="btn btn-ghost" id="btnNext">下一题 ▶</button>
+    </div>
+  </div>
+
+  <!-- ============ 交卷成绩弹窗 ============ -->
+  <div class="modal-mask" id="modalMask">
+    <div class="modal">
+      <h3>📊 本次练习成绩</h3>
+      <div class="score-ring" id="scoreRate">0<small> 分</small></div>
+      <div class="score-detail">
+        <span class="ok" id="mOk">正确 0</span>
+        <span class="no" id="mNo">错误 0</span>
+        <span class="skip" id="mSkip">未答 0</span>
+      </div>
+      <button class="btn btn-primary" id="btnCloseModal">继续练习</button>
+      <button class="btn btn-outline" id="btnReviewWrong">只练错题</button>
+    </div>
+  </div>
+
+  <!-- 轻提示 -->
+  <div id="toast"></div>
+
+  <script>
+  /* =========================================================
+   * 山东专升本计算机刷题 · 前端逻辑
+   * 说明：
+   *   1. 题库来自同目录 questions.json，通过 fetch 加载（需本地服务器打开，不能双击 file:// 直接打开）
+   *   2. 单选题用 radio，多选题用 checkbox；提交后判分并展示解析
+   *   3. 错题记录保存在浏览器 localStorage，刷新不丢失
+   * ========================================================= */
+
+  /* ---------- 常量与全局状态 ---------- */
+  const STORAGE_KEY = 'shandong_zsb_cs_wrongbook_v1';   // 错题本在 localStorage 中的键名
+  const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];       // 选项字母
+
+  let allQuestions = [];   // 全部题目（从 questions.json 读入）
+  let order = [];          // 当前练习的题目 id 序列（id = 题库数组下标）
+  let pos = 0;             // 当前正在作答的题号（order 中的下标）
+  let selections = {};     // 作答记录：id -> 已选选项下标数组
+  let submitted = {};      // 判分记录：id -> true
+  let wrongBook = new Set();  // 错题本：题目 id 集合
+  let practiceOn = false;  // 是否已开始练习
+
+  /* ---------- DOM 快捷引用 ---------- */
+  const $ = (id) => document.getElementById(id);
+
+  /* ---------- 小工具 ---------- */
+  // 轻提示
+  let toastTimer = null;
+  function toast(msg) {
+    const t = $('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 1800);
+  }
+
+  // 读取错题本（考虑隐私模式下 localStorage 不可用的情况）
+  function loadWrongBook() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) JSON.parse(raw).forEach(id => wrongBook.add(id));
+    } catch (e) { console.warn('读取错题本失败：', e); }
+    renderWrongCount();
+  }
+  // 保存错题本并刷新角标
+  function saveWrongBook() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify([...wrongBook])); }
+    catch (e) { console.warn('保存错题本失败：', e); }
+    renderWrongCount();
+  }
+  function renderWrongCount() { $('wrongCount').textContent = wrongBook.size; }
+
+  // 随机打乱数组（Fisher-Yates）
+  function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  /* ---------- 1. 加载题库 ---------- */
+  async function loadQuestions() {
+    try {
+      const res = await fetch('./questions.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      if (!Array.isArray(data) || !data.length) throw new Error('题库为空或格式不正确');
+      allQuestions = data;
+      buildFilters();       // 用题库数据生成筛选项
+      startPractice();      // 默认直接开始一次练习
+    } catch (err) {
+      console.error(err);
+      $('loadingTip').style.display = 'none';
+      const n = $('loadNotice');
+      n.innerHTML = '⚠️ 题库 questions.json 加载失败（' + err.message + '）。<br>' +
+        '如果您是双击打开的 HTML 文件，请改用本地服务器访问：<br>' +
+        '① VS Code 安装 “Live Server” 插件 → 右键 index.html → “Open with Live Server”；<br>' +
+        '② 或命令行在本目录执行 <b>npx serve</b> / <b>python -m http.server 8000</b>，再访问提示的地址。';
+      n.classList.add('show');
+    }
+  }
+
+  /* ---------- 2. 根据题库生成“年份/知识点”筛选项 ---------- */
+  function buildFilters() {
+    const years = [...new Set(allQuestions.map(q => String(q.year)))].sort().reverse();
+    const points = [...new Set(allQuestions.map(q => q.knowledge_point))];
+
+    $('selYear').innerHTML = '<option value="all">全部年份</option>' +
+      years.map(y => `<option value="${y}">${y} 年真题</option>`).join('');
+
+    $('selPoint').innerHTML = '<option value="all">全部知识点</option>' +
+      points.map(p => `<option value="${p}">${p}</option>`).join('');
+  }
+
+  /* ---------- 3. 组卷：按筛选条件 + 模式生成题目序列 ---------- */
+  function startPractice() {
+    if (!allQuestions.length) return;
+
+    const year = $('selYear').value;
+    const point = $('selPoint').value;
+    const type = $('selType').value;
+    const mode = $('selMode').value;
+    const count = $('selCount').value;
+
+    // 3.1 按年份 / 知识点 / 题型筛选
+    let ids = allQuestions
+      .map((q, i) => i)
+      .filter(id => {
+        const q = allQuestions[id];
+        return (year === 'all' || String(q.year) === year) &&
+               (point === 'all' || q.knowledge_point === point) &&
+               (type === 'all' || q.type === type);
+      });
+
+    // 3.2 错题重练模式：只保留错题本中的题目
+    if (mode === 'wrong') {
+      ids = ids.filter(id => wrongBook.has(id));
+      if (!ids.length) { toast('📕 错题本为空，先做几道题吧~'); return; }
+    }
+
+    // 3.3 随机模式：打乱顺序
+    if (mode === 'random') shuffle(ids);
+
+    // 3.4 限制题量
+    if (count !== 'all') ids = ids.slice(0, parseInt(count, 10));
+
+    if (!ids.length) { toast('😕 没有符合筛选条件的题目'); return; }
+
+    // 3.5 初始化本次练习状态
+    order = ids;
+    pos = 0;
+    selections = {};
+    submitted = {};
+    practiceOn = true;
+
+    $('loadingTip').style.display = 'none';
+    $('questionCard').style.display = 'block';
+    $('actionBar').classList.add('show');
+    $('progressWrap').classList.add('show');
+
+    renderQuestion();
+    renderStats();
+    renderSheet();
+    $('sheetBox').classList.remove('show');   // 开始时默认收起答题卡
+  }
+
+  /* ---------- 4. 渲染当前题目 ---------- */
+  function renderQuestion() {
+    const id = order[pos];
+    const q = allQuestions[id];
+    const isMulti = q.type === '多选题';
+
+    // 4.1 标签：年份 / 题型 / 知识点
+    $('qMeta').innerHTML =
+      `<span class="tag year">${q.year} 年</span>` +
+      `<span class="tag ${isMulti ? 'type-multi' : 'type-single'}">${q.type}</span>` +
+      `<span class="tag">${q.knowledge_point}</span>` +
+      (wrongBook.has(id) ? '<span class="tag" style="background:#fef2f2;color:#dc2626;">📕 错题</span>' : '');
+
+    $('qNo').textContent = `第 ${pos + 1} 题 / 共 ${order.length} 题`;
+    $('qTitle').textContent = `${id + 1}. ${q.question}`;
+
+    // 4.2 多选提示语
+    const hint = $('qHint');
+    if (isMulti) {
+      hint.textContent = '☑️ 本题为多选题，漏选、错选均不得分';
+      hint.style.display = 'block';
+    } else {
+      hint.style.display = 'none';
+    }
+
+    // 4.3 渲染选项
+    const isDone = !!submitted[id];
+    const picked = selections[id] || [];
+    const keySet = [...q.answer].map(ch => LETTERS.indexOf(ch));  // 正确答案下标集合
+    const optsBox = $('qOptions');
+    optsBox.innerHTML = '';
+
+    q.options.forEach((text, idx) => {
+      const label = document.createElement('label');
+      label.className = 'option' + (isMulti ? ' multi' : '') + (isDone ? ' disabled' : '');
+      if (picked.includes(idx) && !isDone) label.classList.add('picked');
+
+      // 判分后：正确答案标绿，用户选错的标红
+      if (isDone) {
+        if (keySet.includes(idx)) label.classList.add('is-key');
+        else if (picked.includes(idx)) label.classList.add('is-wrong');
+      }
+
+      const input = document.createElement('input');
+      input.type = isMulti ? 'checkbox' : 'radio';
+      input.name = 'opt_' + id;
+      input.value = idx;
+      input.checked = picked.includes(idx);
+      input.disabled = isDone;
+      input.addEventListener('change', () => handleSelect(id, idx, isMulti));
+
+      const letter = document.createElement('span');
+      letter.className = 'letter';
+      letter.textContent = LETTERS[idx];
+
+      const span = document.createElement('span');
+      span.className = 'text';
+      span.textContent = text;
+
+      label.appendChild(input);
+      label.appendChild(letter);
+      label.appendChild(span);
+      optsBox.appendChild(label);
+    });
+
+    // 4.4 判分结果与解析
+    const banner = $('resultBanner');
+    const analysis = $('analysisBox');
+    if (isDone) {
+      const ok = isCorrect(q, selections[id] || []);
+      banner.className = 'result-banner show ' + (ok ? 'ok' : 'no');
+      banner.innerHTML = (ok ? '✅ 回答正确！' : '❌ 回答错误') +
+        `　<span class="key">正确答案：${q.answer}</span>`;
+      $('analysisText').textContent = q.analysis;
+      analysis.classList.add('show');
+    } else {
+      banner.className = 'result-banner';
+      analysis.classList.remove('show');
+    }
+
+    renderActionButtons();
+  }
+
+  /* ---------- 5. 选择选项 ---------- */
+  function handleSelect(id, idx, isMulti) {
+    if (submitted[id]) return;
+    let arr = selections[id] || [];
+    if (isMulti) {
+      // 多选：再点一次则取消勾选
+      arr = arr.includes(idx) ? arr.filter(v => v !== idx) : [...arr, idx];
+      arr.sort((a, b) => a - b);
+    } else {
+      arr = [idx];   // 单选：直接覆盖
+    }
+    selections[id] = arr;
+    renderQuestion();  // 重新渲染以刷新选中高亮
+  }
+
+  /* ---------- 6. 判分 ---------- */
+  function isCorrect(q, pickedArr) {
+    const key = [...q.answer].map(ch => LETTERS.indexOf(ch)).sort((a, b) => a - b);
+    const picked = [...pickedArr].sort((a, b) => a - b);
+    return key.length === picked.length && key.every((v, i) => v === picked[i]);
+  }
+
+  function submitCurrent() {
+    const id = order[pos];
+    if (submitted[id]) return;
+    const picked = selections[id] || [];
+    if (!picked.length) { toast('请先选择答案再提交 ✋'); return; }
+
+    const q = allQuestions[id];
+    const ok = isCorrect(q, picked);
+    submitted[id] = true;
+
+    // 错题本维护：答错加入，答对移出
+    if (ok) wrongBook.delete(id);
+    else wrongBook.add(id);
+    saveWrongBook();
+
+    renderQuestion();
+    renderStats();
+    renderSheet();
+    if (!ok) toast('❌ 答错了，已加入错题本');
+  }
+
+  /* ---------- 7. 底部按钮状态 ---------- */
+  function renderActionButtons() {
+    const id = order[pos];
+    const main = $('btnMain');
+    $('btnPrev').disabled = pos === 0;
+    $('btnNext').disabled = pos === order.length - 1;
+
+    if (!submitted[id]) {
+      main.textContent = '提交答案';
+      main.disabled = false;
+      main.onclick = submitCurrent;
+    } else if (pos < order.length - 1) {
+      main.textContent = '下一题 ▶';
+      main.disabled = false;
+      main.onclick = () => { pos++; renderQuestion(); renderStats(); renderSheet(); };
+    } else {
+      main.textContent = '交卷';
+      main.disabled = false;
+      main.onclick = finishPractice;
+    }
+  }
+
+  /* ---------- 8. 统计与进度 ---------- */
+  function renderStats() {
+    const done = order.filter(id => submitted[id]).length;
+    const ok = order.filter(id => submitted[id] && isCorrect(allQuestions[id], selections[id] || [])).length;
+    const no = done - ok;
+
+    $('statsText').innerHTML =
+      `已答 <b>${done}</b> 题 · 正确 <b>${ok}</b> · 错误 <b class="err">${no}</b>`;
+    $('posText').textContent = `${pos + 1} / ${order.length}`;
+    $('progressBar').style.width = (order.length ? done / order.length * 100 : 0) + '%';
+  }
+
+  /* ---------- 9. 答题卡 ---------- */
+  function renderSheet() {
+    const grid = $('sheetGrid');
+    grid.innerHTML = '';
+    order.forEach((id, i) => {
+      const btn = document.createElement('button');
+      btn.textContent = i + 1;
+      if (i === pos) btn.classList.add('cur');
+      if (submitted[id]) {
+        btn.classList.add(isCorrect(allQuestions[id], selections[id] || []) ? 'right' : 'wrong');
+      }
+      btn.onclick = () => { pos = i; renderQuestion(); renderStats(); renderSheet(); };
+      grid.appendChild(btn);
+    });
+  }
+
+  /* ---------- 10. 交卷 ---------- */
+  function finishPractice() {
+    const done = order.filter(id => submitted[id]).length;
+    if (done === 0) { toast('还没有作答任何题目哦~'); return; }
+
+    const ok = order.filter(id => submitted[id] && isCorrect(allQuestions[id], selections[id] || [])).length;
+    const no = done - ok;
+    const skip = order.length - done;
+    const rate = Math.round(ok / order.length * 100);
+
+    $('scoreRate').innerHTML = `${rate}<small> 分</small>`;
+    $('mOk').textContent = `正确 ${ok}`;
+    $('mNo').textContent = `错误 ${no}`;
+    $('mSkip').textContent = `未答 ${skip}`;
+    $('modalMask').classList.add('show');
+  }
+
+  /* ---------- 11. 事件绑定 ---------- */
+  $('btnStart').onclick = startPractice;      // 开始/重新开始练习
+
+  $('btnSheetToggle').onclick = () => {       // 展开收起答题卡
+    if (!practiceOn) { toast('请先开始练习'); return; }
+    $('sheetBox').classList.toggle('show');
+  };
+
+  $('btnFinish').onclick = finishPractice;    // 交卷
+
+  $('btnPrev').onclick = () => {              // 上一题
+    if (pos > 0) { pos--; renderQuestion(); renderStats(); renderSheet(); }
+  };
+  $('btnNext').onclick = () => {              // 下一题
+    if (pos < order.length - 1) { pos++; renderQuestion(); renderStats(); renderSheet(); }
+  };
+
+  $('btnClearWrong').onclick = () => {        // 清空错题本
+    if (!wrongBook.size) { toast('错题本已经是空的啦'); return; }
+    if (confirm('确定要清空错题本中的 ' + wrongBook.size + ' 道题吗？')) {
+      wrongBook.clear();
+      saveWrongBook();
+      toast('错题本已清空 🧹');
+      if (practiceOn) renderQuestion();
+    }
+  };
+
+  $('btnCloseModal').onclick = () => $('modalMask').classList.remove('show');  // 关闭成绩弹窗
+  $('btnReviewWrong').onclick = () => {       // 弹窗内直接进入错题重练
+    $('modalMask').classList.remove('show');
+    $('selMode').value = 'wrong';
+    $('selCount').value = 'all';
+    startPractice();
+  };
+  // 点击遮罩背景关闭弹窗
+  $('modalMask').addEventListener('click', (e) => {
+    if (e.target === $('modalMask')) $('modalMask').classList.remove('show');
+  });
+
+  /* ---------- 12. 启动 ---------- */
+  loadWrongBook();   // 先恢复错题本
+  loadQuestions();   // 再加载题库并开始练习
+  </script>
+</body>
+</html>
